@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.blackcat.xpsong.SocketTest.MainActivity">
+
+
+    <Button
+        android:id="@+id/rbtn"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+
+        android:layout_marginTop="180dp"
+        android:text="@string/rbtnText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/send"
+        android:layout_width="0dp"
+        android:layout_height="127dp"
+        android:ems="10"
+        android:inputType="text|textPersonName"
+        android:text="@string/sendText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/receive"
+        android:layout_width="0dp"
+        android:layout_height="112dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/receiveText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sbtn"
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="180dp"
+        android:text="@string/sbtnText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
