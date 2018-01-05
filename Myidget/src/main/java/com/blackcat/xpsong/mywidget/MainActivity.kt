@@ -1,6 +1,7 @@
 package com.blackcat.xpsong.mywidget
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
@@ -115,6 +116,7 @@ class AnimalAdapter(var mAnimalList:MutableList<Animal>):RecyclerView.Adapter<An
         lateinit var mContext:Context
         //定义一个ViewHolder类
         class ViewHolder(view: View):RecyclerView.ViewHolder(view){
+            var cardView=view as CardView
             var animalImage:ImageView=view.animal_image     //取得view的ImageView对象
             var animalName:TextView=view.animal_name     //取得view的TextView对象
         }
@@ -123,7 +125,17 @@ class AnimalAdapter(var mAnimalList:MutableList<Animal>):RecyclerView.Adapter<An
             mContext=parent!!.context
             //使用animal_item.xml布局文件进行inflate
             var view:View=LayoutInflater.from(mContext).inflate(R.layout.animal_item,parent,false)
-            return ViewHolder(view)
+            val holder=ViewHolder(view)
+            holder.cardView.setOnClickListener {
+                val posiotn=holder.adapterPosition
+                val animal=mAnimalList.get(posiotn)
+                var intent= Intent(mContext,AnimalActivity::class.java)
+                intent.putExtra(AnimalActivity().AN,animal.name)
+                intent.putExtra(AnimalActivity().AI,animal.imageId)
+                mContext.startActivity(intent)
+
+            }
+            return holder
         }
         //接收ViewHolder(view)，及其postion参数，给animla_item.xml 中的对象赋值
         override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
